@@ -148,7 +148,7 @@ class App extends Component {
             movieData={this.state.movies} 
             removeMovie={this.removeMovie} 
           /> 
-          <MovieForm addCharacter={this.addCharacter}/>
+          <MovieForm addMovie={this.addMovie}/>
           <button onClick={() => this.removeAllMovies()}> Delete All From Table</button>
         </div>
       )

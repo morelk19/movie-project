@@ -35,12 +35,13 @@ const TableBody = (props) => {
       return (
         <tr key={index}>
           <td>{row.title}</td>
-          <td>{row.actors}</td>
+          <td>{row.actors.join(", ")}</td>
           <td>{row.plot}</td>
           <td>{row.imdbRating}</td>
           <td>{row.director}</td>
           <td>{row.year}</td>
           <td>{row.dateAdded}</td>
+          <td><button onClick={() => props.removeMovie(index)}> Delete</button></td>
         </tr>
       )
     })
@@ -52,16 +53,16 @@ class Table extends Component {
     render() {
         //read props passed in from App.js
         const { 
-          characterData, 
-          removeCharacter
+          movieData, 
+          removeMovie
         } = this.props;
 
         return (
           <table>
             <TableHeader/>
             <TableBody 
-              data={characterData} 
-              removeCharacter={removeCharacter}
+              data={movieData} 
+              removeMovie={removeMovie}
              />
           </table>
         )
